@@ -71,8 +71,12 @@ export function Philosophy() {
 
           {/* Right column - Description and Philosophy items */}
           <div className="space-y-6 lg:pt-48">
-            <p className="text-muted-foreground text-lg leading-relaxed max-w-md mb-12">
+            <p className="text-muted-foreground text-lg leading-relaxed max-w-md mb-6">
               Мы не просто сдаём квартиры — мы строим систему пассивного дохода под каждого клиента. Полный цикл: от подбора объекта до ежемесячных выплат.
+            </p>
+            <p className="text-muted-foreground text-sm mb-12">
+              Работаем в 4 странах:<br />
+              🇷🇺 Москва · 🇹🇷 Анталия · 🇦🇪 Дубай · 🇸🇦 Эр-Рияд
             </p>
 
             {philosophyItems.map((item, index) => (

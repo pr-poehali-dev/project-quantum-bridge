@@ -36,6 +36,13 @@ const projects = [
   },
 ]
 
+const stats = [
+  { value: "352", label: "Объекта в управлении" },
+  { value: "8–14%", label: "Долгосрочная аренда" },
+  { value: "15–23%", label: "Краткосрочная аренда" },
+  { value: "4–25%", label: "Капитализация за 15 лет" },
+]
+
 export function Projects() {
   const [hoveredId, setHoveredId] = useState<number | null>(null)
   const [revealedImages, setRevealedImages] = useState<Set<number>>(new Set())
@@ -78,6 +85,15 @@ export function Projects() {
             Все объекты
             <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16 border-t border-b border-border py-8">
+          {stats.map((stat) => (
+            <div key={stat.label} className="text-center">
+              <p className="text-3xl md:text-4xl font-medium tracking-tight mb-1">{stat.value}</p>
+              <p className="text-muted-foreground text-sm">{stat.label}</p>
+            </div>
+          ))}
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 md:gap-8">
