@@ -1,30 +1,35 @@
 import { useEffect, useRef, useState } from "react"
-import { Home, Building, Armchair, Trees } from "lucide-react"
 import { HighlightedText } from "./HighlightedText"
+import Icon from "@/components/ui/icon"
 
 const expertiseAreas = [
   {
-    title: "Жилая архитектура",
-    description: "Создаем дома, которые сочетают красоту с комфортом, где каждое пространство служит и форме, и функции.",
-    icon: Home,
+    title: "Подбор и покупка",
+    description:
+      "Анализируем рынок, отбираем ликвидные объекты с доходностью от 8% и сопровождаем сделку под ключ. Фиксированная стоимость услуги — 300 000 ₽.",
+    icon: "Search",
+    tag: "от 300 000 ₽",
   },
   {
-    title: "Коммерческие объекты",
+    title: "Ремонт и оснащение",
     description:
-      "Проектируем рабочие пространства, которые вдохновляют на продуктивность и отражают ценности передовых организаций.",
-    icon: Building,
+      "Делаем ремонт и полностью меблируем квартиру под аренду по бюджетным ценам — чтобы объект был максимально привлекателен для арендаторов.",
+    icon: "Hammer",
+    tag: "20% от бюджета",
   },
   {
-    title: "Дизайн интерьеров",
+    title: "Долгосрочная аренда",
     description:
-      "Создаем интерьеры, которые гармонируют с архитектурной оболочкой, формируя целостный пространственный опыт.",
-    icon: Armchair,
+      "Находим надёжных арендаторов, заключаем договор, контролируем оплаты и решаем все бытовые вопросы. Вы просто получаете деньги на счёт.",
+    icon: "KeyRound",
+    tag: "10% от дохода",
   },
   {
-    title: "Градостроительство",
+    title: "Краткосрочная аренда",
     description:
-      "Формируем сообщества через продуманную интеграцию общественных пространств, зданий и природных элементов.",
-    icon: Trees,
+      "Размещаем объект на всех популярных платформах, управляем заездами, уборкой и рейтингом. Доходность выше, чем при долгосрочной аренде.",
+    icon: "CalendarDays",
+    tag: "30% от дохода",
   },
 ]
 
@@ -59,18 +64,17 @@ export function Expertise() {
         <div className="max-w-3xl mb-20">
           <p className="text-muted-foreground text-sm tracking-[0.3em] uppercase mb-6">Наши услуги</p>
           <h2 className="text-6xl font-medium leading-[1.15] tracking-tight mb-6 text-balance lg:text-8xl">
-            <HighlightedText>Экспертиза</HighlightedText>, отточенная
+            <HighlightedText>Три этапа</HighlightedText> на пути
             <br />
-            практикой
+            к пассивному доходу
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            Каждый проект опирается на десятилетия совокупного опыта, создавая архитектуру, которая одновременно инновационна и вневременна.
+            Берёмся за полный цикл или за отдельные этапы — в зависимости от вашей ситуации. Гибкий подход, прозрачные условия.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-x-12 gap-y-16">
           {expertiseAreas.map((area, index) => {
-            const Icon = area.icon
             return (
               <div
                 key={area.title}
@@ -91,9 +95,12 @@ export function Expertise() {
                     transitionDelay: `${index * 150}ms`,
                   }}
                 >
-                  <Icon className="w-10 h-10 mb-4 text-foreground" strokeWidth={1.25} />
+                  <Icon name={area.icon} className="w-10 h-10 mb-4 text-foreground" strokeWidth={1.25} />
                 </div>
-                <h3 className="text-xl font-medium mb-4">{area.title}</h3>
+                <div className="flex items-start justify-between gap-4 mb-4">
+                  <h3 className="text-xl font-medium">{area.title}</h3>
+                  <span className="text-sm text-orange-500 font-medium whitespace-nowrap">{area.tag}</span>
+                </div>
                 <p className="text-muted-foreground leading-relaxed">{area.description}</p>
               </div>
             )
