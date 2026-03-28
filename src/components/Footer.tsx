@@ -1,3 +1,14 @@
+function AmiLogoTeal({ size = 44 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="40" cy="40" r="38" stroke="#26A896" strokeWidth="2" fill="none" />
+      <circle cx="40" cy="40" r="32" stroke="#26A896" strokeWidth="0.8" fill="none" opacity="0.5" />
+      <text x="40" y="36" textAnchor="middle" fill="#26A896" fontSize="16" fontWeight="700" fontFamily="Rubik, sans-serif" letterSpacing="1">AMI</text>
+      <text x="40" y="50" textAnchor="middle" fill="#26A896" fontSize="8" fontWeight="400" fontFamily="Montserrat, sans-serif" letterSpacing="3">GROUP</text>
+    </svg>
+  )
+}
+
 export function Footer() {
   return (
     <footer className="py-16 md:py-24 border-t border-border">
@@ -5,8 +16,9 @@ export function Footer() {
         <div className="grid md:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
           <div className="md:col-span-2">
-            <a href="/" className="inline-block mb-4">
-              <span className="text-2xl font-semibold tracking-tight">AMI GROUP</span>
+            <a href="/" className="inline-flex items-center gap-3 mb-4">
+              <AmiLogoTeal size={44} />
+              <span className="text-xl font-semibold tracking-widest uppercase" style={{ color: "#26A896" }}>AMI GROUP</span>
             </a>
             <p className="text-muted-foreground leading-relaxed max-w-sm mb-4">
               Подбираем, покупаем, ремонтируем и сдаём доходную недвижимость. Вы получаете стабильный доход без участия.

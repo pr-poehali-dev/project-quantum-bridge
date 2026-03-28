@@ -99,7 +99,7 @@ export function Expertise() {
                 </div>
                 <div className="flex items-start justify-between gap-4 mb-4">
                   <h3 className="text-xl font-medium">{area.title}</h3>
-                  <span className="text-sm text-orange-500 font-medium whitespace-nowrap">{area.tag}</span>
+                  <span className="text-sm font-medium whitespace-nowrap" style={{ color: "#26A896" }}>{area.tag}</span>
                 </div>
                 <p className="text-muted-foreground leading-relaxed">{area.description}</p>
               </div>

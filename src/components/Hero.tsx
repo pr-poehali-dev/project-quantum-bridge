@@ -118,12 +118,25 @@ export function Hero() {
 
   return (
     <section id="hero" ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background image */}
       <div className="absolute inset-0 z-0">
         <img
           src="/images/hously-background.png"
-          alt="Минималистичный архитектурный интерьер"
+          alt="Доходная недвижимость"
           className="w-full h-full object-cover object-center"
         />
+        {/* Бирюзовый оверлей */}
+        <div className="absolute inset-0 bg-[#1a7a6e]/40" />
+      </div>
+
+      {/* Фирменные окружности AMI GROUP */}
+      <div className="absolute inset-0 z-5 pointer-events-none overflow-hidden">
+        <svg className="absolute w-full h-full" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="1200" cy="-50" r="550" stroke="white" strokeWidth="0.8" opacity="0.2" />
+          <circle cx="1200" cy="-50" r="400" stroke="white" strokeWidth="0.8" opacity="0.15" />
+          <circle cx="-100" cy="950" r="600" stroke="white" strokeWidth="0.8" opacity="0.15" />
+          <circle cx="-100" cy="950" r="420" stroke="white" strokeWidth="0.8" opacity="0.1" />
+        </svg>
       </div>
 
       <div
@@ -137,7 +150,7 @@ export function Hero() {
         }}
       >
         <div className="mb-72 md:mb-60 lg:mb-80">
-          <p className="text-sm tracking-[0.3em] uppercase text-center text-secondary mb-0">{"Доходная недвижимость в Москве"}</p>
+          <p className="text-sm tracking-[0.3em] uppercase text-center text-white/70 mb-4">{"Доходная недвижимость в Москве"}</p>
 
           <h1
             ref={titleRef}
@@ -145,7 +158,7 @@ export function Hero() {
           >
             {"Создаём и управляем"}
             <br />
-            <span className="text-orange-200">{"доходной недвижимостью"}</span>
+            <span style={{ color: "#7ee8da" }}>{"доходной недвижимостью"}</span>
           </h1>
         </div>
       </div>
@@ -153,14 +166,14 @@ export function Hero() {
       <div className="absolute inset-0 z-20 pointer-events-none">
         <img
           src="/images/hously-foreground.png"
-          alt="Мраморная кухонная столешница"
+          alt="Интерьер"
           className="w-full h-full object-cover object-center"
         />
       </div>
 
       {animationComplete && (
         <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce z-30">
-          <ArrowDown className="w-5 h-5 text-muted-foreground" />
+          <ArrowDown className="w-5 h-5 text-white/60" />
         </div>
       )}
     </section>

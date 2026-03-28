@@ -1,6 +1,17 @@
 import { useState, useEffect, MouseEvent } from "react"
 import { cn } from "../lib/utils"
 
+function AmiLogo({ size = 40 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="40" cy="40" r="38" stroke="white" strokeWidth="2" fill="none" />
+      <circle cx="40" cy="40" r="32" stroke="white" strokeWidth="0.8" fill="none" opacity="0.5" />
+      <text x="40" y="36" textAnchor="middle" fill="white" fontSize="16" fontWeight="700" fontFamily="Rubik, sans-serif" letterSpacing="1">AMI</text>
+      <text x="40" y="50" textAnchor="middle" fill="white" fontSize="8" fontWeight="400" fontFamily="Montserrat, sans-serif" letterSpacing="3">GROUP</text>
+    </svg>
+  )
+}
+
 export function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -32,8 +43,11 @@ export function Header() {
       )}
     >
       <nav className="container mx-auto px-6 flex items-center justify-between md:px-[24]">
-        <a href="/" className="flex items-center gap-2 group" onClick={scrollToTop}>
-          <span className="text-white text-xl font-semibold tracking-tight">AMI GROUP</span>
+        <a href="/" className="flex items-center gap-3 group" onClick={scrollToTop}>
+          <AmiLogo size={40} />
+          <span className="text-white font-semibold tracking-widest text-sm uppercase hidden sm:block">
+            AMI GROUP
+          </span>
         </a>
 
         <ul className="hidden md:flex items-center gap-10 text-sm tracking-wide">
@@ -47,7 +61,7 @@ export function Header() {
             <li key={item.label}>
               <a
                 href={item.href}
-                className="hover:text-[rgb(251,146,60)] transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-[rgb(251,146,60)] after:transition-all after:duration-300 text-white"
+                className="hover:text-[#7ee8da] transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-[#7ee8da] after:transition-all after:duration-300 text-white"
               >
                 {item.label}
               </a>
@@ -104,7 +118,7 @@ export function Header() {
               <li key={item.label}>
                 <a
                   href={item.href}
-                  className="hover:text-[rgb(251,146,60)] transition-colors duration-300 text-white text-4xl font-light block"
+                  className="hover:text-[#7ee8da] transition-colors duration-300 text-white text-4xl font-light block"
                   onClick={closeMobileMenu}
                 >
                   {item.label}
