@@ -3,8 +3,9 @@ function AmiLogoTeal({ size = 44 }: { size?: number }) {
     <svg width={size} height={size} viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="40" cy="40" r="38" stroke="#26A896" strokeWidth="2" fill="none" />
       <circle cx="40" cy="40" r="32" stroke="#26A896" strokeWidth="0.8" fill="none" opacity="0.5" />
-      <text x="40" y="36" textAnchor="middle" fill="#26A896" fontSize="16" fontWeight="700" fontFamily="Rubik, sans-serif" letterSpacing="1">AMI</text>
-      <text x="40" y="50" textAnchor="middle" fill="#26A896" fontSize="8" fontWeight="400" fontFamily="Montserrat, sans-serif" letterSpacing="3">GROUP</text>
+      <text x="40" y="33" textAnchor="middle" fill="#26A896" fontSize="16" fontWeight="700" fontFamily="Rubik, sans-serif" letterSpacing="1">AMI</text>
+      <text x="40" y="45" textAnchor="middle" fill="#26A896" fontSize="7.5" fontWeight="400" fontFamily="Montserrat, sans-serif" letterSpacing="2">GROUP</text>
+      <text x="40" y="57" textAnchor="middle" fill="#26A896" fontSize="5" fontWeight="300" fontFamily="Montserrat, sans-serif" letterSpacing="0.5">ИНВЕСТИЦИИ В НЕДВИЖИМОСТЬ</text>
     </svg>
   )
 }
@@ -17,8 +18,11 @@ export function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <a href="/" className="inline-flex items-center gap-3 mb-4">
-              <AmiLogoTeal size={44} />
-              <span className="text-xl font-semibold tracking-widest uppercase" style={{ color: "#26A896" }}>AMI GROUP</span>
+              <AmiLogoTeal size={56} />
+              <div className="flex flex-col">
+                <span className="text-xl font-semibold tracking-widest uppercase" style={{ color: "#26A896" }}>AMI GROUP</span>
+                <span className="text-xs tracking-widest text-muted-foreground uppercase">Инвестиции в недвижимость</span>
+              </div>
             </a>
             <p className="text-muted-foreground leading-relaxed max-w-sm mb-4">
               Подбираем, покупаем, ремонтируем и сдаём доходную недвижимость. Вы получаете стабильный доход без участия.
@@ -32,36 +36,20 @@ export function Footer() {
           <div>
             <h4 className="text-sm font-medium mb-4">Навигация</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
-              <li>
-                <a href="#projects" className="hover:text-foreground transition-colors">
-                  Объекты
-                </a>
-              </li>
-              <li>
-                <a href="#about" className="hover:text-foreground transition-colors">
-                  О нас
-                </a>
-              </li>
-              <li>
-                <a href="#services" className="hover:text-foreground transition-colors">
-                  Услуги
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="hover:text-foreground transition-colors">
-                  Получить расчёт
-                </a>
-              </li>
+              <li><a href="#projects" className="hover:text-foreground transition-colors">Объекты</a></li>
+              <li><a href="#about" className="hover:text-foreground transition-colors">О нас</a></li>
+              <li><a href="#services" className="hover:text-foreground transition-colors">Услуги</a></li>
+              <li><a href="#contact" className="hover:text-foreground transition-colors">Получить расчёт</a></li>
             </ul>
           </div>
 
           {/* Contact */}
           <div>
-            <h4 className="text-sm font-medium mb-4">Связь</h4>
+            <h4 className="text-sm font-medium mb-4">Контакты</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li>
-                <a href="mailto:anna@6629556.ru" className="hover:text-foreground transition-colors">
-                  anna@6629556.ru
+                <a href="tel:+74955148361" className="hover:text-foreground transition-colors font-medium">
+                  +7 (495) 514-83-61
                 </a>
               </li>
               <li>
@@ -70,9 +58,17 @@ export function Footer() {
                 </a>
               </li>
               <li>
+                <a href="mailto:anna@6629556.ru" className="hover:text-foreground transition-colors">
+                  anna@6629556.ru
+                </a>
+              </li>
+              <li>
                 <a href="https://t.me/invest_anna" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
                   @invest_anna
                 </a>
+              </li>
+              <li className="pt-1 leading-snug">
+                г. Москва, Архангельский пер.<br />д.6 стр.2
               </li>
             </ul>
           </div>
@@ -80,7 +76,7 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="pt-8 border-t border-border flex flex-col md:flex-row md:items-center justify-between gap-4 text-sm text-muted-foreground">
-          <p>© 2025 AMI GROUP. Все права защищены.</p>
+          <p>© 2018–2025 AMI GROUP. Все права защищены.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-foreground transition-colors">
               Политика конфиденциальности
