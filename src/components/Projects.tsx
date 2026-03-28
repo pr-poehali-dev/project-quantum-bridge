@@ -2,6 +2,29 @@ import { useState, useEffect, useRef } from "react"
 
 const cases = [
   {
+    id: 0,
+    title: "Лофт с террасой, ЖК LOFT Вольный",
+    subtitle: "Флиппинг · Москва · 2021",
+    description: "Розовый лофт с антресолью, мраморным полом и собственной террасой. Куплен, полностью переделан и продан за 6 месяцев.",
+    steps: [
+      { num: "01", title: "Купили за 4 800 000 ₽", desc: "Подобрали объект ниже рынка с огромным потенциалом — высокие потолки, терраса, нестандартная планировка" },
+      { num: "02", title: "Вложили 1 100 000 ₽", desc: "Дизайнерский ремонт: лофт-антресоль, мраморный пол, золотые акценты, полная меблировка" },
+      { num: "03", title: "Продали за 8 400 000 ₽", desc: "Срок проекта — 6 месяцев. Прибыль 2 500 000 ₽ поделена 50/50 с инвестором" },
+    ],
+    metrics: [
+      { value: "~42%", label: "Годовых на капитал" },
+      { value: "1 250 000 ₽", label: "Доля инвестора" },
+    ],
+    photos: [
+      { id: 1, url: "https://cdn.poehali.dev/files/4ff21e1a-aa46-43de-9373-8b4f45d8a1b8.jpg", label: "Гостиная" },
+      { id: 2, url: "https://cdn.poehali.dev/files/d725e996-92b0-4a06-9e57-01052741b76f.jpg", label: "Антресоль" },
+      { id: 3, url: "https://cdn.poehali.dev/files/8e07846b-14f1-472c-bb5c-497fb492963f.jpg", label: "Интерьер" },
+      { id: 4, url: "https://cdn.poehali.dev/files/787baa2d-d4fd-414c-b585-1cb7fde2a9db.jpg", label: "Рабочая зона" },
+      { id: 5, url: "https://cdn.poehali.dev/files/6e2c7e77-99e5-4e18-bb16-76541eaacfbf.jpg", label: "Терраса" },
+      { id: 6, url: "https://cdn.poehali.dev/files/aa61728c-6e91-4ee0-bb67-c3b3077ba6ac.jpg", label: "Вид сверху" },
+    ],
+  },
+  {
     id: 1,
     title: "Мини-студия, ул. Подъёмная",
     subtitle: "Краткосрочная аренда · Москва · 2024",
