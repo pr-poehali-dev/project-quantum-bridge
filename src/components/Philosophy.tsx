@@ -54,7 +54,7 @@ export function Philosophy() {
           {/* Left column - Title and image */}
           <div className="lg:sticky lg:top-32 lg:self-start">
             <p className="text-muted-foreground text-sm tracking-[0.3em] uppercase mb-6">Почему выбирают нас</p>
-            <h2 className="text-6xl md:text-6xl font-medium leading-[1.15] tracking-tight mb-6 text-balance lg:text-8xl">
+            <h2 className="text-4xl md:text-6xl font-medium leading-[1.15] tracking-tight mb-6 text-balance lg:text-8xl">
               Инвестиции с
               <br />
               <HighlightedText>результатом</HighlightedText>
@@ -74,10 +74,25 @@ export function Philosophy() {
             <p className="text-muted-foreground text-lg leading-relaxed max-w-md mb-6">
               Мы не просто сдаём квартиры — мы строим систему пассивного дохода под каждого клиента. Полный цикл: от подбора объекта до ежемесячных выплат.
             </p>
-            <p className="text-muted-foreground text-sm mb-12">
-              Работаем в 4 странах:<br />
-              🇷🇺 Москва · 🇹🇷 Анталия · 🇦🇪 Дубай · 🇸🇦 Эр-Рияд
-            </p>
+            <div className="mb-10">
+              <p className="text-muted-foreground text-xs tracking-[0.2em] uppercase mb-4">Работаем в 4 странах</p>
+              <div className="flex gap-4 flex-wrap">
+                {[
+                  { flag: "🇷🇺", city: "Москва", country: "Россия" },
+                  { flag: "🇹🇷", city: "Анталия", country: "Турция" },
+                  { flag: "🇦🇪", city: "Дубай", country: "ОАЭ" },
+                  { flag: "🇸🇦", city: "Эр-Рияд", country: "Саудовская Аравия" },
+                ].map((item) => (
+                  <div key={item.city} className="flex flex-col items-center gap-1.5">
+                    <div className="w-14 h-14 rounded-full border-2 flex items-center justify-center text-2xl bg-white shadow-sm" style={{ borderColor: "#26A896" }}>
+                      {item.flag}
+                    </div>
+                    <span className="text-xs font-medium text-foreground">{item.city}</span>
+                    <span className="text-[10px] text-muted-foreground">{item.country}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
 
             {philosophyItems.map((item, index) => (
               <div

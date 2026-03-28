@@ -150,11 +150,11 @@ export function Hero() {
         }}
       >
         <div className="mb-72 md:mb-60 lg:mb-80">
-          <p className="text-sm tracking-[0.3em] uppercase text-center text-white/70 mb-4">{"Доходная недвижимость в Москве"}</p>
+          <p className="text-xs md:text-sm tracking-[0.2em] md:tracking-[0.3em] uppercase text-center text-white/70 mb-4 px-4">{"Доходная недвижимость в Москве"}</p>
 
           <h1
             ref={titleRef}
-            className="text-7xl font-medium text-balance text-center text-white mb-0 tracking-tight leading-[0.9] lg:text-8xl"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium text-balance text-center text-white mb-0 tracking-tight leading-[1.05] md:leading-[0.95] px-4"
           >
             {"Создаём и управляем"}
             <br />
