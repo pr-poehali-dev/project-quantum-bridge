@@ -172,7 +172,7 @@ export function Projects() {
         {/* Header */}
         <div className="mb-16">
           <p className="text-muted-foreground text-sm tracking-[0.3em] uppercase mb-6">Реальные кейсы</p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight">Наши объекты</h2>
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-medium tracking-tight">Наши объекты</h2>
         </div>
 
         {/* Stats */}

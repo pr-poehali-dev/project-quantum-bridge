@@ -41,7 +41,7 @@ export function CallToAction() {
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-primary-foreground/60 text-sm tracking-[0.3em] uppercase mb-8">Получите расчёт доходности</p>
 
-          <h2 className="text-3xl md:text-4xl lg:text-6xl font-medium leading-[1.1] tracking-tight mb-8 text-balance">
+          <h2 className="text-xl md:text-2xl lg:text-4xl font-medium leading-[1.1] tracking-tight mb-8 text-balance">
             Узнайте, сколько принесёт
             <br />
             ваш <HighlightedText>бюджет</HighlightedText>
