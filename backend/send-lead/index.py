@@ -12,18 +12,21 @@ from email.mime.multipart import MIMEMultipart
 from datetime import datetime
 
 
-def send_telegram(name: str, phone: str) -> None:
+def send_telegram(name: str, phone: str, amount: str = "", source: str = "") -> None:
     token = os.environ.get("TELEGRAM_BOT_TOKEN", "")
     chat_id = os.environ.get("TELEGRAM_CHAT_ID", "")
     if not token or not chat_id:
         return
 
     now = datetime.now().strftime("%d.%m.%Y %H:%M")
+    source_label = "Мини-офисы" if source == "offices" else "Квартиры"
     text = (
         f"🏠 *Новая заявка — AMI GROUP*\n\n"
+        f"📌 Раздел: {source_label}\n"
         f"👤 Имя: {name}\n"
         f"📞 Телефон: {phone}\n"
-        f"🕐 Время: {now}"
+        + (f"💰 Сумма: {amount}\n" if amount else "")
+        + f"🕐 Время: {now}"
     )
 
     data = urllib.parse.urlencode({
@@ -40,7 +43,7 @@ def send_telegram(name: str, phone: str) -> None:
     urllib.request.urlopen(req, timeout=10)
 
 
-def send_email(name: str, phone: str) -> None:
+def send_email(name: str, phone: str, amount: str = "", source: str = "") -> None:
     smtp_user = os.environ.get("SMTP_USER", "")
     smtp_password = os.environ.get("SMTP_PASSWORD", "")
     smtp_host = os.environ.get("SMTP_HOST", "smtp.mail.ru")
@@ -49,17 +52,21 @@ def send_email(name: str, phone: str) -> None:
         return
 
     now = datetime.now().strftime("%d.%m.%Y %H:%M")
+    source_label = "Мини-офисы" if source == "offices" else "Квартиры / апартаменты"
 
     msg = MIMEMultipart("alternative")
     msg["Subject"] = f"Новая заявка с сайта — {name}"
     msg["From"] = smtp_user
     msg["To"] = smtp_user
 
+    amount_row = f"<tr><td><b>Сумма инвестирования:</b></td><td>{amount}</td></tr>" if amount else ""
     html = f"""<html><body style="font-family: Arial, sans-serif; color: #222;">
       <h2>Новая заявка — AMI GROUP</h2>
       <table>
+        <tr><td><b>Раздел:</b></td><td>{source_label}</td></tr>
         <tr><td><b>Имя:</b></td><td>{name}</td></tr>
         <tr><td><b>Телефон:</b></td><td>{phone}</td></tr>
+        {amount_row}
         <tr><td><b>Время:</b></td><td>{now}</td></tr>
       </table>
     </body></html>"""
@@ -84,6 +91,8 @@ def handler(event: dict, context) -> dict:
     body = json.loads(event.get("body") or "{}")
     name = body.get("name", "").strip()
     phone = body.get("phone", "").strip()
+    amount = body.get("amount", "").strip()
+    source = body.get("source", "").strip()
 
     if not name or not phone:
         return {
@@ -92,8 +101,8 @@ def handler(event: dict, context) -> dict:
             "body": json.dumps({"error": "Заполните имя и телефон"})
         }
 
-    send_telegram(name, phone)
-    send_email(name, phone)
+    send_telegram(name, phone, amount, source)
+    send_email(name, phone, amount, source)
 
     return {
         "statusCode": 200,
