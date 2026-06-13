@@ -111,12 +111,21 @@ export function OfficesBlog() {
 
           {/* Left — description */}
           <div>
-            <div className="aspect-[4/3] bg-muted mb-8 overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80"
-                alt="Мини-офисы"
-                className="w-full h-full object-cover"
-              />
+            <div className="grid grid-cols-2 gap-3 mb-8">
+              <div className="aspect-[3/4] overflow-hidden">
+                <img
+                  src="https://cdn.poehali.dev/projects/9ef5bfa7-758f-46fd-a1ac-3d14201f1976/bucket/309959c2-afd1-46e4-8036-828a288ecdff.jpeg"
+                  alt="Мини-офисы — интерьер"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="aspect-[3/4] overflow-hidden">
+                <img
+                  src="https://cdn.poehali.dev/projects/9ef5bfa7-758f-46fd-a1ac-3d14201f1976/bucket/0572b0d1-7dc2-4b3c-8080-b3896ccb66ea.jpeg"
+                  alt="Мини-офисы — рабочее пространство"
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
             <blockquote className="border-l-2 border-foreground pl-6">
               <p className="text-xl font-medium leading-relaxed mb-4">
