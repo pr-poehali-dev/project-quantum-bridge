@@ -67,14 +67,43 @@ export function OfficesBlog() {
 
         {/* Header */}
         <div className="max-w-3xl mb-20">
-          <p className="text-muted-foreground text-sm tracking-[0.3em] uppercase mb-6">Новая стратегия</p>
+          <p className="text-muted-foreground text-sm tracking-[0.3em] uppercase mb-6">Стратегия 2025–2028</p>
           <h2 className="text-2xl md:text-4xl font-medium leading-[1.15] tracking-tight mb-6 text-balance lg:text-5xl">
             Мини-офисы —<br />
             <HighlightedText>стратегия нового времени</HighlightedText>
           </h2>
-          <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl">
+          <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl mb-8">
             Пока все инвестируют в квартиры, мы освоили нишу, которая приносит больше. Коммерческая недвижимость в формате мини-офисов — один из самых доходных инструментов на рынке сегодня.
           </p>
+          <div className="flex flex-wrap gap-3">
+            <a
+              href="https://www.torgi-ru.ru/articles/trendy-kommercheskoy-nedvizhimosti-chto-budet-vostrebovano-v-2025-2030-godakh/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 border border-border px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:border-foreground transition-colors"
+            >
+              <Icon name="ExternalLink" size={14} />
+              Тренды офисной недвижимости 2025–2030
+            </a>
+            <a
+              href="https://sber.pro/publication/barometr-kommercheskoi-nedvizhimosti-rinok-bez-universalnih-reshenii/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 border border-border px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:border-foreground transition-colors"
+            >
+              <Icon name="ExternalLink" size={14} />
+              СберПро: доходность коммерческой недвижимости
+            </a>
+            <a
+              href="https://aktivo.ru/blog/investicii-v-kommercheskuyu-nedvizhimost"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 border border-border px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:border-foreground transition-colors"
+            >
+              <Icon name="ExternalLink" size={14} />
+              Инвестиции в коммерческую недвижимость — AKTIVO
+            </a>
+          </div>
         </div>
 
         {/* Content grid */}
@@ -93,7 +122,7 @@ export function OfficesBlog() {
               <p className="text-xl font-medium leading-relaxed mb-4">
                 «Не только квартиры. Мини-офисы — это новая точка роста для умного инвестора.»
               </p>
-              <cite className="text-muted-foreground text-sm not-italic">— AMI GROUP, стратегия 2024–2025</cite>
+              <cite className="text-muted-foreground text-sm not-italic">— AMI GROUP, стратегия 2025–2028</cite>
             </blockquote>
           </div>
 
