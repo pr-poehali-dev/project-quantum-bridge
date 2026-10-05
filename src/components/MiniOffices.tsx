@@ -5,8 +5,13 @@ const offices = [
     id: "n-8-1",
     name: "The N 8/1",
     address: "Напрудный пер., д. 8, стр. 1",
-    image: "https://cdn.poehali.dev/projects/9ef5bfa7-758f-46fd-a1ac-3d14201f1976/files/c18824e2-cb70-49fe-80e9-20d8fb591294.jpg",
-    href: "",
+    image: "https://cdn.poehali.dev/projects/9ef5bfa7-758f-46fd-a1ac-3d14201f1976/bucket/b41b72dc-63dc-44fd-ae13-d969cd999b3d.PNG",
+    gallery: [
+      "https://cdn.poehali.dev/projects/9ef5bfa7-758f-46fd-a1ac-3d14201f1976/bucket/89641634-f8ff-47e0-a9ca-9bd70bbf56f4.PNG",
+      "https://cdn.poehali.dev/projects/9ef5bfa7-758f-46fd-a1ac-3d14201f1976/bucket/607984db-42e5-4ef8-b6f6-204661260447.PNG",
+      "https://cdn.poehali.dev/projects/9ef5bfa7-758f-46fd-a1ac-3d14201f1976/bucket/c0a2f60d-56e6-4677-a61a-65a64b1c6062.PNG",
+    ],
+    href: "https://6629556.ru/",
   },
   {
     id: "m-247",
@@ -19,7 +24,7 @@ const offices = [
     id: "av-11",
     name: "AV 11",
     address: "Автозаводская, 11",
-    image: "https://cdn.poehali.dev/projects/9ef5bfa7-758f-46fd-a1ac-3d14201f1976/bucket/53051124-97e3-4f9a-bf03-7c6e448cf56c.png",
+    image: "https://cdn.poehali.dev/projects/9ef5bfa7-758f-46fd-a1ac-3d14201f1976/bucket/3cc51e8d-b8a1-4c5a-a44a-a451aff786a8.png",
     href: "https://av-11.ru/",
   },
 ]
@@ -49,6 +54,13 @@ export function MiniOffices() {
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
+                {"gallery" in o && o.gallery && (
+                  <div className="grid grid-cols-3 gap-2 -mt-3 mb-5">
+                    {o.gallery.map((url) => (
+                      <img key={url} src={url} alt={o.name} className="w-full aspect-square object-cover" />
+                    ))}
+                  </div>
+                )}
                 <h3 className="text-xl font-medium mb-1">{o.name}</h3>
                 <p className="text-muted-foreground text-sm mb-4">{o.address}</p>
                 {o.href && (
